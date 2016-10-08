@@ -27,8 +27,10 @@ module.exports = (function (){
     configureApp : function (app){
 
       passport.use(new GoogleStrategy({
-          clientID: config.auth.GOOGLE_CLIENT_ID,
-          clientSecret: config.auth.GOOGLE_CLIENT_SECRET,
+          //clientID: config.auth.GOOGLE_CLIENT_ID,
+          clientID: 'test',
+          //clientSecret: config.auth.GOOGLE_CLIENT_SECRET,
+          clientSecret: 'test',
           passReqToCallback: true,
           callbackURL: url.resolve(config.public_host_name || '', '/auth/google/callback')
         },

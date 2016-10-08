@@ -1,6 +1,6 @@
 var storageFactory = require('../../lib/storage/storage-factory');
 var populator = require('../../test/lib/util/populator');
-var dummyServiceGenerator = require('../../test/fixtures/dummy-services');
+var dummyServiceGenerator = require('../../test/fixtures/real-services');
 var services;
 
 function run(program){

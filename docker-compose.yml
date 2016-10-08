@@ -5,15 +5,21 @@ redis:
     # expose db in the host /data dir, make sure to create and set permissions for this folder
     volumes:
         - /data:/data
+
 watchmenpopulate:
     # populates with stub data of real services
     build: ./
     links:
         - redis
+    volumes:
+        - ./test/fixtures/real-services.js:/watchmen/test/fixtures/real-services.js
     command: node scripts/data-load/populate-services-from-fixtures.js -r -e production
     env_file: docker-compose.env
+
 watchmenweb:
     build: ./
+    volumes:
+        - ./webserver/routes/web-auth-route.js:/watchmen/webserver/routes/web-auth-route.js
     ports:
         - "3000:3000"
     links:

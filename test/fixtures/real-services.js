@@ -17,13 +17,17 @@ exports = module.exports = (function(){
   }
 
   var services = [];
-  services.push(generateService({ name: 'apple', url: 'https://apple.com', port: 443 }));
-  services.push(generateService({ name: 'node', url: 'http://node.com', port: 80 }));
-  services.push(generateService({ name: 'amazon', url: 'http://amazon.com', port: 80 }));
-  services.push(generateService({ name: 'npm', url: 'http://npm.org', port: 80 }));
-  services.push(generateService({ name: 'yahoo', url: 'http://yahoo.com', port: 80 }));
-  services.push(generateService({ name: 'alexa', url: 'http://alexa.com', port: 80 }));
-  services.push(generateService({ name: 'github', url: 'http://github.com', port: 80 }));
+  services.push(generateService({ name: 'bitbucket', url: 'http://bitbucket.com', port: 80 }));
+  services.push(generateService({ name: 'youtube', url: 'http://youtube.com', port: 80 }));
+  services.push(generateService({ name: 'facebook', url: 'http://facebook.com', port: 80 }));
+  services.push(generateService({ name: 'twitter', url: 'http://twitter.com', port: 80 }));
+  services.push(generateService({ name: '3=====D~~', url: 'http://linkedin.com', port: 80 }));
+  services.push(generateService({ name: '3====D~~', url: 'http://bbc.com', port: 80 }));
+  services.push(generateService({ name: '3===D~~', url: 'http://google.com', port: 80 }));
+  services.push(generateService({ name: '3==D~~', url: 'http://maps.google.com', port: 80 }));
+  services.push(generateService({ name: '3=D~~', url: 'http://maps.google.com', port: 80 }));
+
+/*
   services.push(generateService({ name: 'bitbucket', url: 'http://bitbucket.com', port: 80 }));
   services.push(generateService({ name: 'youtube', url: 'http://youtube.com', port: 80 }));
   services.push(generateService({ name: 'facebook', url: 'http://facebook.com', port: 80 }));
@@ -37,7 +41,7 @@ exports = module.exports = (function(){
   services.push(generateService({ name: 'bbc', url: 'http://bbc.com', port: 80 }));
   services.push(generateService({ name: 'google', url: 'http://google.com', port: 80 }));
   services.push(generateService({ name: 'google maps', url: 'http://maps.google.com', port: 80 }));
-
+*/
   return services;
 
 })();
