@@ -5,11 +5,11 @@ exports = module.exports = (function(){
   var MIN = 60 * 1000; //ms
 
   var DEFAULTS = {
-    interval: 2 * MIN,
-    failureInterval: MIN,
+    interval: 600,
+    failureInterval: 10000,
     timeout: 10000,
     warningThreshold: 3000,
-    pingServiceName: 'http-head'
+    pingServiceName: 'icmp'
   };
 
   function generateService (service){
