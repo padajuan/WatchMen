@@ -16,6 +16,14 @@ watchmen_web:
   command: node run-web-server.js
   env_file: docker-compose.env
 
+watchmen_populate:
+  build: ./
+  container_name: watchmen_populate
+  links:
+      - redis
+  command: node scripts/data-load/populate-services-from-fixtures.js -r -e production
+  env_file: docker-compose.env
+
 watchmen_server:
   build: ./
   container_name: watchmen_srv
