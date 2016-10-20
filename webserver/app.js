@@ -14,7 +14,7 @@ var auth = require('./routes/web-auth-route');
 
 exports = module.exports = function(storage){
   if (!storage) {
-    throw 'storage is required';
+    throw new Error('storage is required');
   }
 
   app.set('views', __dirname + '/views');
@@ -23,6 +23,7 @@ exports = module.exports = function(storage){
 
   app.use(compress());
   app.use(session({
+    store: storage.getSessionStore(session),
     secret: 'myBigSecret',
     saveUninitialized: true,
     resave: true

@@ -1,14 +1,16 @@
 redis:
-    image: redis:2
-    ports:
-        - "6379"
-    # expose db in the host /data dir, make sure to create and set permissions for this folder
-    volumes:
-        - /data:/data
+  container_name: watchmen_redis
+  image: redis:2
+  ports:
+      - "6379"
+  volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data:/data
 
-watchmenpopulate:
+watchmen_populate:
     # populates with stub data of real services
     build: ./
+    container_name: watchmen_populate
     links:
         - redis
     volumes:
@@ -18,6 +20,7 @@ watchmenpopulate:
 
 watchmenweb:
     build: ./
+    container_name: watchmen_web
     volumes:
         - ./webserver/routes/web-auth-route.js:/watchmen/webserver/routes/web-auth-route.js
     ports:
@@ -26,8 +29,10 @@ watchmenweb:
         - redis
     command: node run-web-server.js
     env_file: docker-compose.env
+
 watchmenserver:
     build: ./
+    container_name: watchmen_srv
     links:
         - redis
     command: node run-monitor-server.js
